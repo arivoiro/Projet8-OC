@@ -1,12 +1,16 @@
 import React from 'react';
+import './homepage.styles.scss';
+import Banner from '../../components/banner/banner.component';
+import Card from '../../components/card/card.component'; 
+import logementsData from '../../logements.json';
 
-function Home() {
+const HomePage = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      {/* Contenu de la page Home */}
+    <div className="homepage">
+      <Banner />
+      <Card logementsData={logementsData} /> 
     </div>
   );
-}
+};
 
-export default Home;
+export default HomePage;
