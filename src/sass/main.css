@@ -1,3 +1,21 @@
+/* 
+0 - 600px : Phone (ref : 375px)
+600 - 900px: Tablet portrait (ref : 768px)
+900 - 1200px : Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + : Big desktop
+*/
+/* $breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land 
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > pge layout > components
+
+1em = 16px
+only screen is to avoid media queries are applied in case of printing for example
+*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
 *,
@@ -10,7 +28,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  /* root font-size to rem - correspond to 10px but not in px to authorize user to change default font size of his browser - 1rem = 10px; 10px/16px = 62.5% - 16px default size browser font*/ }
+  /* root font-size to rem - correspond to 10px but not in px to authorize user to change default font size of his browser - 1rem = 10px; 10px/16px = 62.5% - 16px default size browser font*/
+  font-weight: medium; }
 
 body {
   font-family: "Montserrat", sans-serif; }

@@ -1,11 +1,14 @@
 import React from 'react';
-
 import './banner.styles.scss';
 
-const Banner = () => {
+const Banner = ({ text, image }) => {
+  const bannerStyle = {
+    backgroundImage: `url(${image})`
+  };
+
   return (
-    <section className="banner">
-      <h1 className="banner-text">Chez vous, partout et ailleurs</h1>
+    <section className="banner" style={bannerStyle}>
+      <div className="banner-text">{text}</div>
     </section>
   );
 };
