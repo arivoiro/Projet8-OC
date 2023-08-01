@@ -25,6 +25,11 @@ only screen is to avoid media queries are applied in case of printing for exampl
   padding: 0;
   box-sizing: inherit; }
 
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
