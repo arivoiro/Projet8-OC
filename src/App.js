@@ -13,16 +13,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <HeaderComponent />
-
+        <HeaderComponent />
         <Routes>
           <Route path="/" element={<Navigate to="/Home" />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/A-Propos" element={<About />} />
-          <Route path="/Fiche-Logement" element={<Logement />} />
+          <Route path="/logement/:id" element={<Logement />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-
         <FooterComponent />
       </div>
     </Router>

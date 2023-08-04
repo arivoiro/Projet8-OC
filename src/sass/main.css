@@ -11,8 +11,6 @@
 - tab-land 
 - big-desktop
 
-ORDER: Base + typography > general layout + grid > pge layout > components
-
 1em = 16px
 only screen is to avoid media queries are applied in case of printing for example
 */

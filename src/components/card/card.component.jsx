@@ -1,5 +1,6 @@
 import React from 'react';
 import './card.styles.scss';
+import { Link } from 'react-router-dom';
 import CardItem from '../cardItem/cardItem.component';
 import logementsData from '../../logements.json';
 
@@ -8,10 +9,11 @@ const Card = () => {
     <div className="gallery">
       <div className="gallery-grid">
         {logementsData.map((logement) => (
-          <CardItem 
-          logement = {logement}
-          key = {logement.id}
-          />
+          <Link key={logement.id} to={`/logement/${logement.id}`}>
+            <div className="card-container">
+              <CardItem logement={logement} />
+            </div>
+          </Link>
         ))}
       </div>
     </div>

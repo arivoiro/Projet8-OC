@@ -41,10 +41,4 @@ only screen is to avoid media queries are applied in case of printing for exampl
       @content;
     }
   }
-  @if $breakpoint == big-desktop {
-    @media only screen and (min-width: 112.5em) {
-      // 1800px
-      @content;
-    }
-  }
 }
