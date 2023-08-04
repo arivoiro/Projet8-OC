@@ -12,6 +12,10 @@
     @include respond(tab-port) {
       height: 350px;
     }
+
+    @include respond(phone) {
+      height: 255px;
+    }
   }
 
   .logement-host-container {
@@ -30,7 +34,14 @@
     }
 
     @include respond(phone) {
-      width: 94%;
+      width: 91%;
+      flex-direction: column;
+    }
+
+    .host-info {
+      @include respond(phone) {
+        display: none;
+      }
     }
   }
 
@@ -44,10 +55,19 @@
   .logement-title {
     font-size: 36px;
     margin-bottom: 5px;
+
+    @include respond(phone) {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
   }
 
   .logement-location {
     font-size: 18px;
+
+    @include respond(phone) {
+      font-size: 14px;
+    }
   }
 
   .host-info {
@@ -59,15 +79,23 @@
 
   .host-name {
     font-size: 18px;
-    word-break: break-all;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 8px;
+
+    @include respond(phone) {
+      font-size: 12px;
+    }
   }
 
   .host-picture img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
+
+    @include respond(phone) {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   .tags-ratings-container {
@@ -87,7 +115,10 @@
     }
 
     @include respond(phone) {
-      width: 94%;
+      width: 91%;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 0;
     }
   }
 
@@ -106,6 +137,13 @@
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 14px;
+
+    @include respond(phone) {
+      height: 18px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 10px;
+    }
   }
 
   .logement-rating {
@@ -113,10 +151,38 @@
       width: 24.75px;
       height: 24px;
       margin-left: 5px;
+
+      @include respond(phone) {
+        width: 13.41px;
+        height: 13px;
+      }
     }
 
     .etoile:first-child {
       margin-left: 0;
+
+      @include respond(phone) {
+        margin-left: 5px;
+      }
+    }
+  }
+  
+  .rating-host-container {
+    .host-info-phone{
+      display: none;
+  
+      @include respond(phone) {
+        display: flex;
+      }
+    }
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 20px;
     }
   }
 
@@ -137,7 +203,16 @@
     }
 
     @include respond(phone) {
-      width: 94%;
+      width: 100%;
+      flex-direction: column;
+      gap: 0%;
+      margin: 0 auto 20px;
+    }
+
+    .collapse {
+      @include respond(phone) {
+        margin: 13px auto;
+      }
     }
   }
 

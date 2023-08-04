@@ -30,6 +30,18 @@
       transform: translateY(-50%);
       cursor: pointer;
       z-index: 2;
+
+      @include respond(tab-land) {
+        height: 15%;
+      }
+  
+      @include respond(tab-port) {
+        height: 13%;
+      }
+  
+      @include respond(phone) {
+        height: 10%;
+      }
     }
   
     .arrow_left {
@@ -48,6 +60,10 @@
         padding: 1.5rem;
         color: white;
         font-size: 18px;
+
+        @include respond(phone) {
+          visibility: hidden;
+        }
       }
   }
   

@@ -56,8 +56,19 @@ const LogementPage = () => {
           ))}
         </div>
 
-        <div className="logement-rating">
-          <Stars rating={parseInt(logement.rating)} />
+        <div className="rating-host-container">
+          <div className="logement-rating">
+            <Stars rating={parseInt(logement.rating)} />
+          </div>
+          <div className="host-info host-info-phone">
+            <div className="host-name">
+              <div>{firstName}</div>
+              <div>{lastName}</div>
+            </div>
+            <div className="host-picture">
+              <img src={logement.host.picture} alt="Hôte" />
+            </div>
+          </div>
         </div>
       </div>
 
