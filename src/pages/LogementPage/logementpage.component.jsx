@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './logementpage.styles.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Slideshow from '../../components/slideshow/slideshow.component';
 import Stars from '../../components/stars/stars.component';
 import Collapse from '../../components/collapse/collapse.component';
@@ -8,10 +8,22 @@ import logementsData from '../../logements.json';
 
 const LogementPage = () => {
   const { id } = useParams();
-  const logement = logementsData.find((logement) => logement.id === id);
+  const navigate = useNavigate();
 
-  // Utiliser un tableau pour gérer les états des collapses
-  const [collapseStates, setCollapseStates] = useState(Array(logement.equipments.length).fill(false));
+  const [logement, setLogement] = useState(null);
+  const [collapseStates, setCollapseStates] = useState([]);
+
+  useEffect(() => {
+    const fetchedLogement = logementsData.find((logement) => logement.id === id);
+    if (!fetchedLogement) {
+      // Redirection vers la page d'erreur si le logement n'existe pas
+      navigate('/404');
+    } else {
+      // Mettre à jour l'état du logement et initialiser l'état des collapses
+      setLogement(fetchedLogement);
+      setCollapseStates(Array(fetchedLogement.equipments.length).fill(false));
+    }
+  }, [id, navigate]);
 
   const handleCollapseClick = (index) => {
     setCollapseStates((prevState) => {
@@ -22,10 +34,9 @@ const LogementPage = () => {
   };
 
   if (!logement) {
-    return <div>Logement non trouvé</div>;
+    return <div>Chargement en cours...</div>;
   }
 
-  // Séparer le nom complet de l'hôte en nom et prénom
   const [firstName, lastName] = logement.host.name.split(' ');
 
   return (
