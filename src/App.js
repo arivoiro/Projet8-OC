@@ -15,9 +15,9 @@ function App() {
       <div className="App">
         <HeaderComponent />
         <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/A-Propos" element={<About />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/a-propos" element={<About />} />
           <Route path="/logement/:id" element={<Logement />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
