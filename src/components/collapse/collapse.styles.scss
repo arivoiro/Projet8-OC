@@ -5,16 +5,20 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 3rem auto 0;
+    
+    .arrow {
+      transition: all 0.5s;
+    }
 
     &.open {
       .arrow {
-        animation: rotateDown 0.5s forwards;
+        rotate: -180deg;
       }
     }
     
-    &:not(.open) {
+    &.close {
       .arrow {
-        animation: rotateUp 0.5s forwards;
+        rotate : 0deg;
       }
     }
 
@@ -52,55 +56,20 @@
       color: #FF6060;
       transform-origin: center top;
       font-size: 18px;
+      transition: all 0.5s;
 
       &.open {
-        animation: slideDownContent 0.5s forwards;
-        padding: 3rem 2rem;
-      }
-
-      &:not(.open) {
-        animation: slideUpContent 0.3s forwards;
-      }
-    }
-}
-@keyframes rotateDown {
-    0% {
-        transform: rotate(180deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes rotateUp {
-    0% {
-        transform: rotate(-180deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes slideDownContent {
-    0% {
-        transform: scaleY(0);
-    }
-    100% {
         transform: scaleY(1);
-    }
-}
-
-@keyframes slideUpContent {
-    0% {
-        transform: scaleY(1);
-        height: 120px;
+        height: auto;
         opacity: 1;
         padding: 3rem 2rem;
-    }
-    100% {
+      }
+
+      &.close {
         transform: scaleY(0);
         height: 0px;
         opacity: 0;
         padding: 0 0 0 2rem;
+      }
     }
 }

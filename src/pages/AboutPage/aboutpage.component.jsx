@@ -1,5 +1,3 @@
-// aboutpage.component.jsx
-
 import React, { useState } from 'react';
 import './aboutpage.styles.scss';
 import Banner from '../../components/banner/banner.component';
@@ -19,13 +17,15 @@ const AboutPage = () => {
       <div className="content">
         <div className="collapses">
           <Collapse
+            key={1}
             title="Fiabilité"
             content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont
             régulièrement vérifiées par nos équipes."
             isOpen={openCollapseIndex === 0}
             onClick={() => handleCollapseClick(0)}
           />
-          <Collapse
+           <Collapse
+            key={2}
             title="Respect"
             content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de
             perturbation du voisinage entraînera une exclusion de notre plateforme."
@@ -33,6 +33,7 @@ const AboutPage = () => {
             onClick={() => handleCollapseClick(1)}
           />
           <Collapse
+            key={3}
             title="Service"
             content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de
             perturbation du voisinage entraînera une exclusion de notre plateforme."
@@ -40,6 +41,7 @@ const AboutPage = () => {
             onClick={() => handleCollapseClick(2)}
           />
           <Collapse
+            key={4}
             title="Sécurité"
             content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement
             correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au

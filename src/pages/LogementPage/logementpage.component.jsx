@@ -16,10 +16,8 @@ const LogementPage = () => {
   useEffect(() => {
     const fetchedLogement = logementsData.find((logement) => logement.id === id);
     if (!fetchedLogement) {
-      // Redirection vers la page d'erreur si le logement n'existe pas
       navigate('/404');
     } else {
-      // Mettre à jour l'état du logement et initialiser l'état des collapses
       setLogement(fetchedLogement);
       setCollapseStates(Array(fetchedLogement.equipments.length).fill(false));
     }
